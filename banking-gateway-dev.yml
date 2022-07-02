@@ -1,0 +1,8 @@
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+#logging:
+#  config: K:/bootcamp/project1/banking-gateway/src/main/resources/logback.xml
