@@ -1,3 +1,15 @@
 
+spring:
+  application:
+    name: movement-service
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    status-page-url-path: /swagger-ui/
+
 server:
-  port: 4100
+  port: 20300
+
+path:
+  accounts: /api/movements
