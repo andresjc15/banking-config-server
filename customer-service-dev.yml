@@ -12,3 +12,6 @@ eureka:
 
 #logging:
 #  config: K:/bootcamp/project1/customer-service/src/main/resources/logback.xml
+
+swagger:
+  title: Customer Service API - Dev

@@ -3,6 +3,7 @@ spring:
   application:
     name: customer-service
 
+eureka:
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
     status-page-url-path: /swagger-ui/
