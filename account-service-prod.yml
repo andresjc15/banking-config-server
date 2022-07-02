@@ -1,3 +1,21 @@
 
-server:
-  port: 1200
+spring:
+  data:
+    mongodb:
+      uri: mongodb://mongoc:27017/account_service
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://banking-discovery-server:8761/eureka
+
+#logging:
+#  config: K:/bootcamp/project1/account-service/src/main/resources/logback.xml
+
+swagger:
+  title: Account Service API - Prod
+
+
+config:
+  endpoint:
+    enterprise-customers: lb://customer-service/api/enterprise-customers

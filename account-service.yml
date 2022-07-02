@@ -1,3 +1,15 @@
 
+spring:
+  application:
+    name: account-service
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    status-page-url-path: /swagger-ui/
+
 server:
-  port: 4200
+  port: 20200
+
+path:
+  accounts: /api/accounts
