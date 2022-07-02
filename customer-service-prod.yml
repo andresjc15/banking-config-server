@@ -1,3 +1,13 @@
 
-server:
-  port: 1100
+spring:
+  data:
+    mongodb:
+      uri: mongodb://mongoc:27017/customer_service
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://banking-discovery-server:8761/eureka
+
+#logging:
+#  config: K:/bootcamp/project1/customer-service/src/main/resources/logback.xml
