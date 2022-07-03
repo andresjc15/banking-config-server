@@ -13,4 +13,8 @@ eureka:
 #  config: K:/bootcamp/project1/customer-service/src/main/resources/logback.xml
 
 swagger:
-  title: Customer Service API - Dev
+  title: Customer Service API - Prod
+
+config:
+  endpoint:
+    accounts: lb://account-service/api/accounts

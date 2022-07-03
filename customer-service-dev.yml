@@ -14,3 +14,7 @@ eureka:
 
 swagger:
   title: Customer Service API - Dev
+
+config:
+  endpoint:
+    accounts: lb://account-service/api/accounts
