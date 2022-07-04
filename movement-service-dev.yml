@@ -14,3 +14,7 @@ eureka:
 
 swagger:
   title: Movement Service API - Dev
+
+config:
+  endpoint:
+    accounts: lb://account-service/api/accounts
