@@ -14,7 +14,8 @@ eureka:
 
 swagger:
   title: Account Service API - Prod
-
+  version: 1.0.0
+  description: Account Microservice API
 
 config:
   endpoint:

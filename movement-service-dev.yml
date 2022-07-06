@@ -14,6 +14,8 @@ eureka:
 
 swagger:
   title: Movement Service API - Dev
+  version: 1.0.0
+  description: Movement Microservice API
 
 config:
   endpoint:
