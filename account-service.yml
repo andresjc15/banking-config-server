@@ -6,7 +6,7 @@ spring:
 eureka:
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-    status-page-url-path: /swagger-ui/
+    status-page-url-path: /swagger-ui.html
     hostname: localhost
 
 server:
