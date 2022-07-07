@@ -20,5 +20,7 @@ swagger:
 config:
   endpoint:
     accounts: lb://account-service/api/accounts
-    customers: lb://customer-service/api/customers
+    customers:
+      enterprise: lb://customer-service/api/enterprise-customers
+      personal: lb://customer-service/api/personal-customers
     movements: lb://movement-service/api/movements
