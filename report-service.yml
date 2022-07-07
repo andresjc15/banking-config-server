@@ -13,4 +13,4 @@ server:
   port: 20400
 
 path:
-  accounts: /api/reports
+  reports: /api/reports
