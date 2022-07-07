@@ -1,0 +1,24 @@
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://mongoc:27017/report_service
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://banking-discovery-server:8761/eureka
+
+#logging:
+#  config: K:/bootcamp/project1/report-service/src/main/resources/logback.xml
+
+swagger:
+  title: Report Service API - Prod
+  version: 1.0.0
+  description: Report Microservice API
+
+config:
+  endpoint:
+    accounts: lb://account-service/api/accounts
+    customers: lb://customer-service/api/customers
+    movements: lb://movement-service/api/movements
