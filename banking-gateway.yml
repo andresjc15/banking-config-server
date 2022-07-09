@@ -21,6 +21,12 @@ spring:
             - Path=/movement-service/**
           filters:
             - StripPrefix=1
+        - id: report-service
+          uri: lb://report-service
+          predicates:
+            - Path=/report-service/**
+          filters:
+            - StripPrefix=1
 
 eureka:
   instance:
@@ -38,15 +44,15 @@ resilience4j:
         permittedNumberOfCallsInHalfOpenState: 4
         slowCallRateThreshold: 2
       instances:
-        products:
-          base-config: defecto
+        accounts:
+          base-config: default
   timelimiter:
     configs:
       defecto:
         timeoutDuration: 2s
       instances:
-        products:
-          base-config: defecto
+        accounts:
+          base-config: default
 
 server:
   port: 8090
