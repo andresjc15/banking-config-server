@@ -10,7 +10,7 @@ spring:
           filters:
             - name: CircuitBreaker
               args: 
-                name: accounts
+                name: account
                 statusCodes: 400,404,500,503
             - StripPrefix=1
         - id: customer-service
@@ -18,18 +18,30 @@ spring:
           predicates:
             - Path=/customer-service/**
           filters:
+            - name: CircuitBreaker
+              args: 
+                name: customer
+                statusCodes: 400,404,500,503
             - StripPrefix=1
         - id: movement-service
           uri: lb://movement-service
           predicates:
             - Path=/movement-service/**
           filters:
+            - name: CircuitBreaker
+              args: 
+                name: movement
+                statusCodes: 400,404,500,503
             - StripPrefix=1
         - id: report-service
           uri: lb://report-service
           predicates:
             - Path=/report-service/**
           filters:
+            - name: CircuitBreaker
+              args: 
+                name: report
+                statusCodes: 400,404,500,503
             - StripPrefix=1
 
 eureka:
@@ -42,20 +54,32 @@ resilience4j:
   circuitbreaker:
     configs:
       default:
-        slidingWindowSize: 6
+        slidingWindowSize: 8
         failureRateThreshold: 50
         waitDurationInOpenState: 20s
         permittedNumberOfCallsInHalfOpenState: 4
         slowCallRateThreshold: 2
     instances:
-      accounts:
+      account:
+        base-config: default
+      customer:
+        base-config: default
+      movement:
+        base-config: default
+      report:
         base-config: default
   timelimiter:
     configs:
       default:
         timeoutDuration: 2s
     instances:
-      accounts:
+      account:
+        base-config: default
+      customer:
+        base-config: default
+      movement:
+        base-config: default
+      report:
         base-config: default
 
 server:
