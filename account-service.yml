@@ -26,9 +26,9 @@ resilience4j:
     configs:
       default:
         timeoutDuration: 2s
-      instances:
-        accounts:
-          base-config: default
+    instances:
+      accounts:
+        base-config: default
 
 server:
   port: 20200
