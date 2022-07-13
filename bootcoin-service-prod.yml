@@ -20,3 +20,7 @@ swagger:
 config:
   endpoint:
     accounts: lb://account-service/api/accounts
+
+topic:
+  movement:
+    name: BootCoinTopic
