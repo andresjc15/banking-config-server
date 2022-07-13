@@ -21,7 +21,6 @@ resilience4j:
     instances:
       accounts:
         base-config: default
-
   timelimiter:
     configs:
       default:
