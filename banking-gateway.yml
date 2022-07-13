@@ -41,22 +41,22 @@ eureka:
 resilience4j:
   circuitbreaker:
     configs:
-      defecto:
+      default:
         slidingWindowSize: 6
         failureRateThreshold: 50
         waitDurationInOpenState: 20s
         permittedNumberOfCallsInHalfOpenState: 4
         slowCallRateThreshold: 2
-      instances:
-        accounts:
-          base-config: defecto
+    instances:
+      accounts:
+        base-config: default
   timelimiter:
     configs:
-      defecto:
+      default:
         timeoutDuration: 2s
-      instances:
-        accounts:
-          base-config: defecto
+    instances:
+      accounts:
+        base-config: default
 
 server:
   port: 8090
