@@ -9,6 +9,27 @@ eureka:
     status-page-url-path: /swagger-ui.html
     hostname: localhost
 
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        slidingWindowSize: 6
+        failureRateThreshold: 50
+        waitDurationInOpenState: 20s
+        permittedNumberOfCallsInHalfOpenState: 4
+        slowCallRateThreshold: 2
+    instances:
+      accounts:
+        base-config: default
+
+  timelimiter:
+    configs:
+      default:
+        timeoutDuration: 2s
+      instances:
+        accounts:
+          base-config: default
+
 server:
   port: 20200
 
