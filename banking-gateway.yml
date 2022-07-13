@@ -8,6 +8,10 @@ spring:
           predicates:
             - Path=/account-service/**
           filters:
+            - name: CircuitBreaker
+              args: 
+                name: accounts
+                statusCodes: 400,404,500,503
             - StripPrefix=1
         - id: customer-service
           uri: lb://customer-service
