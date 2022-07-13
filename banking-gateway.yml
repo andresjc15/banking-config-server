@@ -49,14 +49,14 @@ resilience4j:
         slowCallRateThreshold: 2
       instances:
         accounts:
-          base-config: default
+          base-config: defecto
   timelimiter:
     configs:
       defecto:
         timeoutDuration: 2s
       instances:
         accounts:
-          base-config: default
+          base-config: defecto
 
 server:
   port: 8090
